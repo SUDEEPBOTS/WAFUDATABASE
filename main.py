@@ -1,11 +1,16 @@
 import os
-from fastapi import FastAPI, Depends, HTTPException, Header
-from pydantic import BaseModel
-import pymongo
+import random
 import secrets
 from typing import Optional
 
-app = FastAPI(title="Waifu Database API", description="Secure and Private Waifu Database Management API")
+import pymongo
+from fastapi import FastAPI, Depends, HTTPException, Header
+from pydantic import BaseModel
+
+app = FastAPI(
+    title="Waifu Database API", 
+    description="Secure and Private Waifu Database Management API"
+)
 
 # Fetching Database Connection from Environment Variables
 URI = os.getenv("MONGODB_URI")
@@ -41,6 +46,21 @@ def verify_key(x_api_key: str = Header(None)):
         raise HTTPException(status_code=403, detail="Invalid or unauthorized API Key provided.")
     return x_api_key
 
+# --- Helper Function for Bot Format ---
+def format_waifu(doc):
+    """Formats the MongoDB document to always include 'id' and 'waifu_id' for the Telegram Bot"""
+    doc['_id'] = str(doc['_id'])
+    
+    # Agar purane data me id nahi hai, toh _id ko hi id bana do
+    if 'id' not in doc:
+        doc['id'] = str(doc.get('waifu_id', doc['_id']))
+        
+    # Telegram bot specifically 'waifu_id' dhundhta hai, toh usko duplicate kar do
+    if 'waifu_id' not in doc:
+        doc['waifu_id'] = doc['id']
+        
+    return doc
+
 # --- Endpoints ---
 
 @app.get("/")
@@ -67,49 +87,50 @@ def stats():
 def get_random():
     random_waifu = list(waifu_col.aggregate([{"$sample": {"size": 1}}]))
     if random_waifu:
-        waifu = random_waifu[0]
-        waifu['_id'] = str(waifu['_id'])
+        waifu = format_waifu(random_waifu[0])
         return {"status": "success", "data": waifu}
     return {"status": "failed", "message": "No records found in the database."}
 
 @app.get("/Find")
 def find_waifu(name: str):
     """Search for a waifu by name (Case-insensitive)"""
-    # $regex and $options: 'i' makes the search case-insensitive and allows partial matches
     results = list(waifu_col.find({"name": {"$regex": name, "$options": "i"}}))
     
     if not results:
         raise HTTPException(status_code=404, detail=f"No records found matching the name '{name}'.")
     
-    for doc in results:
-        doc['_id'] = str(doc['_id'])
-        
-    return {"status": "success", "total_found": len(results), "data": results}
+    formatted_results = [format_waifu(doc) for doc in results]
+    return {"status": "success", "total_found": len(formatted_results), "data": formatted_results}
 
 @app.get("/List")
 def list_waifus(skip: int = 0, limit: int = 50):
     """Retrieve a paginated list of waifus"""
     results = list(waifu_col.find().skip(skip).limit(limit))
     
-    for doc in results:
-        doc['_id'] = str(doc['_id'])
-        
-    return {"status": "success", "showing": len(results), "skip": skip, "limit": limit, "data": results}
+    formatted_results = [format_waifu(doc) for doc in results]
+    return {"status": "success", "showing": len(formatted_results), "skip": skip, "limit": limit, "data": formatted_results}
 
 @app.post("/Waifuadd")
 def add_waifu(waifu: WaifuItem, api_key: str = Depends(verify_key)):
     data = waifu.dict()
+    
+    # Naye waifu ke liye automatically ek chota numeric ID generate karo (e.g. 8492)
+    new_id = str(random.randint(1000, 99999))
+    data["id"] = new_id
+    data["waifu_id"] = new_id
+    
     waifu_col.insert_one(data)
+    
     return {
         "status": "success", 
         "message": f"Successfully added '{waifu.name}' to the database.",
+        "waifu_id": new_id,
         "added_by": waifu.added_by
     }
 
 @app.put("/Update")
 def update_waifu(name: str, update_data: WaifuUpdateItem, api_key: str = Depends(verify_key)):
     """Update specific fields of an existing waifu (Requires API Key)"""
-    # Filter out fields that were not provided (None values)
     update_fields = {k: v for k, v in update_data.dict().items() if v is not None}
     
     if not update_fields:
