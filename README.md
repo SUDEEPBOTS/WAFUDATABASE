@@ -1,33 +1,22 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=200&section=header&text=Waifu%20Database&fontSize=70&fontColor=fff&animation=twinkling&fontAlignY=38&desc=Secure%20%26%20Private%20Waifu%20API%20%7C%20Powered%20by%20FastAPI%20%2B%20MongoDB&descAlignY=60&descSize=17" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=220&section=header&text=Waifu%20Database%20API&fontSize=65&fontColor=fff&animation=twinkling&fontAlignY=40&desc=🌸%20Complete%20API%20Reference%20%26%20Documentation&descAlignY=62&descSize=18" width="100%"/>
 
 </div>
 
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=20&duration=3000&pause=800&color=EC4899&center=true&vCenter=true&multiline=true&width=620&height=80&lines=🌸+The+Ultimate+Waifu+Database+API;⚡+Built+with+FastAPI+%2B+MongoDB;🔐+Secure+Key+Authentication+System)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=20&duration=2500&pause=800&color=EC4899&center=true&vCenter=true&multiline=true&width=650&height=85&lines=🔗+Base+URL+→+https%3A%2F%2Fwafus.vercel.app;⚡+Fast+%7C+Secure+%7C+Easy+to+Use;🌸+Thousands+of+Waifus+at+your+fingertips)](https://git.io/typing-svg)
 
 </div>
-
----
 
 <div align="center">
 
 [![Stars](https://img.shields.io/github/stars/SUDEEPBOTS/WAFUDATABASE?style=for-the-badge&logo=github&color=ec4899&labelColor=1a1a2e)](https://github.com/SUDEEPBOTS/WAFUDATABASE/stargazers)
 [![Forks](https://img.shields.io/github/forks/SUDEEPBOTS/WAFUDATABASE?style=for-the-badge&logo=github&color=a855f7&labelColor=1a1a2e)](https://github.com/SUDEEPBOTS/WAFUDATABASE/network/members)
-[![Issues](https://img.shields.io/github/issues/SUDEEPBOTS/WAFUDATABASE?style=for-the-badge&logo=github&color=f43f5e&labelColor=1a1a2e)](https://github.com/SUDEEPBOTS/WAFUDATABASE/issues)
-[![Repo Size](https://img.shields.io/github/repo-size/SUDEEPBOTS/WAFUDATABASE?style=for-the-badge&logo=github&color=f59e0b&labelColor=1a1a2e)](https://github.com/SUDEEPBOTS/WAFUDATABASE)
-[![Last Commit](https://img.shields.io/github/last-commit/SUDEEPBOTS/WAFUDATABASE?style=for-the-badge&logo=git&color=14b8a6&labelColor=1a1a2e)](https://github.com/SUDEEPBOTS/WAFUDATABASE/commits)
-
-</div>
-
-<div align="center">
-
 ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
-![Python](https://img.shields.io/badge/Python_3.11-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+[![API Status](https://img.shields.io/website?url=https%3A%2F%2Fwafus.vercel.app%2FPing&style=for-the-badge&label=API+Status&color=22c55e&labelColor=1a1a2e)](https://wafus.vercel.app/Ping)
 
 </div>
 
@@ -35,12 +24,11 @@
 
 <div align="center">
 
-## 🌐 Live API Base URL
+## 🌐 Base URL
 
-### **`https://wafus.vercel.app`**
+# `https://wafus.vercel.app`
 
-[![API Docs](https://img.shields.io/badge/Swagger%20UI%20Docs-/docs-ec4899?style=for-the-badge&logo=swagger&logoColor=white)](https://wafus.vercel.app/docs)
-[![Ping](https://img.shields.io/badge/API%20Status-/Ping-22c55e?style=for-the-badge&logo=statuspage&logoColor=white)](https://wafus.vercel.app/Ping)
+[![Open Swagger Docs](https://img.shields.io/badge/Interactive%20Docs-Swagger%20UI-ec4899?style=for-the-badge&logo=swagger&logoColor=white)](https://wafus.vercel.app/docs)
 
 </div>
 
@@ -48,64 +36,110 @@
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=12,20,24&height=4" width="100%"/>
 
-## 📡 API Endpoints
+<div align="center">
 
-### 🔓 Public Endpoints — No Key Required
+## 📋 Endpoint Overview
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | [`/`](https://wafus.vercel.app/) | 🔑 Auto-generate a new API key |
-| `GET` | [`/Ping`](https://wafus.vercel.app/Ping) | 🟢 Check if API is alive |
-| `GET` | [`/Stats`](https://wafus.vercel.app/Stats) | 📊 Total waifu count in DB |
-| `GET` | [`/Random`](https://wafus.vercel.app/Random) | 🎲 Get a random waifu |
-| `GET` | [`/Find?name=`](https://wafus.vercel.app/Find?name=rem) | 🔍 Search waifu by name |
-| `GET` | [`/List?skip=0&limit=50`](https://wafus.vercel.app/List) | 📋 Paginated waifu list |
+</div>
 
-### 🔐 Protected Endpoints — API Key Required (`x-api-key` header)
+```
+🟢 PUBLIC  — No authentication needed
+🔴 PRIVATE — Requires x-api-key header
+```
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/Waifuadd` | ➕ Add a new waifu to database |
-| `PUT` | `/Update?name=` | ✏️ Update waifu fields by name |
-| `DELETE` | `/Rmwafus?name=` | 🗑️ Delete waifu records by name |
+| Badge | Method | Endpoint | What it does |
+|-------|--------|----------|--------------|
+| 🟢 | `GET` | `/` | Generate a new API Key |
+| 🟢 | `GET` | `/Ping` | Check if API is online |
+| 🟢 | `GET` | `/Stats` | Total waifus in database |
+| 🟢 | `GET` | `/Random` | Get a random waifu |
+| 🟢 | `GET` | `/Find?name=` | Search waifu by name |
+| 🟢 | `GET` | `/List` | Paginated list of all waifus |
+| 🔴 | `POST` | `/Waifuadd` | Add a new waifu |
+| 🔴 | `PUT` | `/Update?name=` | Update waifu details |
+| 🔴 | `DELETE` | `/Rmwafus?name=` | Delete a waifu |
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=12,20,24&height=4" width="100%"/>
 
 ---
 
-## 🔑 Authentication
+## 🔑 Step 1 — Get Your API Key
 
-**Step 1** — Hit the root endpoint to auto-generate your API key:
-```bash
+> Hit the root endpoint **once** to auto-generate your personal API key.
+
+**Request:**
+```http
 GET https://wafus.vercel.app/
 ```
+
+**Response:**
 ```json
 {
   "status": "success",
-  "api_key": "YUKI_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "instruction": "Provide this key in the 'x-api-key' header."
+  "message": "Welcome to the Waifu Database API.",
+  "api_key": "YUKI_3f8a21c94e7b...",
+  "instruction": "Provide this key in the 'x-api-key' header for protected routes."
 }
 ```
 
-**Step 2** — Pass it in every protected request:
-```bash
-curl -H "x-api-key: YUKI_xxxx..." https://wafus.vercel.app/Waifuadd
-```
-
-> ⚠️ **Store your key safely.** Each visit to `/` generates a new key.
+> 💡 **Save this key!** Every time you visit `/`, a brand new key is created.
 
 ---
 
-## 📦 Request & Response Examples
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=12,20,24&height=4" width="100%"/>
 
-<details>
-<summary><b>🎲 GET /Random — Random Waifu</b></summary>
+## 🟢 Public Endpoints
+
+---
+
+### 🏓 `/Ping` — Health Check
+
+> Just to make sure the API is alive and responding.
+
+```http
+GET https://wafus.vercel.app/Ping
+```
+
+```json
+{
+  "status": "success",
+  "message": "API is operational and running smoothly."
+}
+```
+
+---
+
+### 📊 `/Stats` — Database Statistics
+
+> See how many waifus are currently stored.
+
+```http
+GET https://wafus.vercel.app/Stats
+```
+
+```json
+{
+  "status": "success",
+  "total_records": 4821,
+  "database": "Waifuimm"
+}
+```
+
+---
+
+### 🎲 `/Random` — Random Waifu
+
+> Returns one completely random waifu from the database. Perfect for gacha-style bots!
+
+```http
+GET https://wafus.vercel.app/Random
+```
 
 ```json
 {
   "status": "success",
   "data": {
-    "_id": "64f3a...",
+    "_id": "64f3a9c2b1e4f0001a2b3c4d",
     "id": "8492",
     "waifu_id": "8492",
     "name": "Rem",
@@ -116,22 +150,123 @@ curl -H "x-api-key: YUKI_xxxx..." https://wafus.vercel.app/Waifuadd
   }
 }
 ```
-</details>
 
-<details>
-<summary><b>➕ POST /Waifuadd — Add Waifu (Protected)</b></summary>
+---
+
+### 🔍 `/Find` — Search by Name
+
+> Case-insensitive search. Partial names work too — `re` will match `Rem`, `Rei`, `Revy`, etc.
+
+```http
+GET https://wafus.vercel.app/Find?name=rem
+```
+
+**Parameters:**
+
+| Param | Type | Required | Example |
+|-------|------|----------|---------|
+| `name` | string | ✅ Yes | `?name=rem` |
+
+```json
+{
+  "status": "success",
+  "total_found": 3,
+  "data": [
+    {
+      "id": "8492",
+      "waifu_id": "8492",
+      "name": "Rem",
+      "img_url": "https://example.com/rem.jpg",
+      "rarity": "Legendary",
+      "event_tag": "Standard",
+      "added_by": "Sudeep"
+    }
+  ]
+}
+```
+
+> ❌ **404** if no match found:
+> ```json
+> { "detail": "No records found matching the name 'xyz'." }
+> ```
+
+---
+
+### 📋 `/List` — Paginated Waifu List
+
+> Retrieve all waifus with pagination support. Use `skip` and `limit` to navigate pages.
+
+```http
+GET https://wafus.vercel.app/List?skip=0&limit=50
+```
+
+**Parameters:**
+
+| Param | Type | Default | Description |
+|-------|------|---------|-------------|
+| `skip` | int | `0` | How many records to skip |
+| `limit` | int | `50` | Max records to return per page |
+
+```json
+{
+  "status": "success",
+  "showing": 50,
+  "skip": 0,
+  "limit": 50,
+  "data": [ { "..." } ]
+}
+```
+
+> 💡 **Page 2:** `?skip=50&limit=50` · **Page 3:** `?skip=100&limit=50`
+
+---
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=12,20,24&height=4" width="100%"/>
+
+## 🔴 Protected Endpoints
+
+> All protected routes require the `x-api-key` header.
+
+```http
+x-api-key: YUKI_your_key_here
+```
+
+---
+
+### ➕ `/Waifuadd` — Add a New Waifu
+
+```http
+POST https://wafus.vercel.app/Waifuadd
+```
+
+**Headers:**
+```
+x-api-key: YUKI_your_key_here
+Content-Type: application/json
+```
 
 **Request Body:**
+
+| Field | Type | Required | Default | Description |
+|-------|------|----------|---------|-------------|
+| `name` | string | ✅ | — | Waifu name |
+| `img_url` | string | ✅ | — | Direct image URL |
+| `rarity` | string | ❌ | `Common` | Common / Rare / Epic / Legendary |
+| `event_tag` | string | ❌ | `Standard` | Event label e.g. `Valentine` |
+| `source_message_id` | int | ❌ | `0` | Telegram message ID if any |
+| `added_by` | string | ✅ | — | Your name / username |
+
 ```json
 {
   "name": "Zero Two",
   "img_url": "https://example.com/zerotwo.jpg",
   "rarity": "Legendary",
   "event_tag": "Valentine",
-  "source_message_id": 1234,
+  "source_message_id": 0,
   "added_by": "Sudeep"
 }
 ```
+
 **Response:**
 ```json
 {
@@ -141,18 +276,39 @@ curl -H "x-api-key: YUKI_xxxx..." https://wafus.vercel.app/Waifuadd
   "added_by": "Sudeep"
 }
 ```
-</details>
 
-<details>
-<summary><b>✏️ PUT /Update — Update Waifu (Protected)</b></summary>
+---
 
-**Request:** `PUT /Update?name=Rem`
+### ✏️ `/Update` — Update Waifu Details
+
+> Updates **all records** matching the given name. Only send fields you want to change.
+
+```http
+PUT https://wafus.vercel.app/Update?name=Rem
+```
+
+**Headers:**
+```
+x-api-key: YUKI_your_key_here
+Content-Type: application/json
+```
+
+**Parameters:**
+
+| Param | Type | Required | Description |
+|-------|------|----------|-------------|
+| `name` | string | ✅ Yes | Exact name to target |
+
+**Request Body** *(only the fields you want to update)*:
+
 ```json
 {
+  "img_url": "https://example.com/rem_new.jpg",
   "rarity": "Mythic",
   "event_tag": "Anniversary"
 }
 ```
+
 **Response:**
 ```json
 {
@@ -160,94 +316,61 @@ curl -H "x-api-key: YUKI_xxxx..." https://wafus.vercel.app/Waifuadd
   "message": "Successfully updated 2 record(s) matching the name 'Rem'."
 }
 ```
-</details>
 
-<details>
-<summary><b>🗑️ DELETE /Rmwafus — Remove Waifu (Protected)</b></summary>
+> ❌ **400** if body is empty · **404** if name not found
 
-**Request:** `DELETE /Rmwafus?name=Zero Two`
+---
+
+### 🗑️ `/Rmwafus` — Delete a Waifu
+
+> Permanently deletes **all records** matching the given name.
+
+```http
+DELETE https://wafus.vercel.app/Rmwafus?name=Zero Two
+```
+
+**Headers:**
+```
+x-api-key: YUKI_your_key_here
+```
+
+**Parameters:**
+
+| Param | Type | Required |
+|-------|------|----------|
+| `name` | string | ✅ Yes |
+
+**Response:**
 ```json
 {
   "status": "success",
   "message": "Successfully deleted 1 record(s) matching the name 'Zero Two'."
 }
 ```
-</details>
+
+> ⚠️ This action is **permanent** and cannot be undone.
 
 ---
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=12,20,24&height=4" width="100%"/>
 
-## 🚀 Self-Host / Deploy
+## ⚠️ Error Reference
 
-### ☁️ Deploy on Vercel (Recommended)
-
-<div align="center">
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/SUDEEPBOTS/WAFUDATABASE)
-
-</div>
-
-### 🖥️ Run Locally
-
-<details>
-<summary><b>📋 Click to expand local setup guide</b></summary>
-
-<br>
-
-**1️⃣ Clone the Repo**
-```bash
-git clone https://github.com/SUDEEPBOTS/WAFUDATABASE.git
-cd WAFUDATABASE
-```
-
-**2️⃣ Create Virtual Environment**
-```bash
-python3.11 -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-```
-
-**3️⃣ Install Dependencies**
-```bash
-pip install -r requirements.txt
-```
-
-**4️⃣ Set Environment Variable**
-```bash
-export MONGODB_URI="your_mongodb_connection_string"
-```
-
-**5️⃣ Run the Server**
-```bash
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
-```
-
-**6️⃣ Open Swagger Docs**
-```
-http://localhost:8000/docs
-```
-
-</details>
+| HTTP Code | Meaning | Reason |
+|-----------|---------|--------|
+| `200` | ✅ Success | Everything worked fine |
+| `400` | ❌ Bad Request | Empty or invalid body sent |
+| `401` | 🔒 Unauthorized | `x-api-key` header is missing |
+| `403` | 🚫 Forbidden | API key is invalid or wrong |
+| `404` | 🔍 Not Found | No matching records found in DB |
 
 ---
 
-## ⚙️ Environment Variables
-
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `MONGODB_URI` | ✅ Yes | Your MongoDB connection string |
-
----
-
-## 📊 Repo Activity
+## 📊 Repo Stats
 
 <div align="center">
 
 ![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=SUDEEPBOTS&repo=WAFUDATABASE&theme=tokyo-night&hide_border=true&area=true&color=ec4899&line=a855f7&point=ffffff)
-
-</div>
-
-<div align="center">
 
 [![Star History Chart](https://api.star-history.com/svg?repos=SUDEEPBOTS/WAFUDATABASE&type=Date&theme=dark)](https://star-history.com/#SUDEEPBOTS/WAFUDATABASE&Date)
 
@@ -255,22 +378,17 @@ http://localhost:8000/docs
 
 ---
 
-## 🤝 Contact & Support
+## 🤝 Support
 
 <div align="center">
 
 [![Owner](https://img.shields.io/badge/Owner-Sudeep_Boss-ec4899?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Zcziiy)
-[![Telegram](https://img.shields.io/badge/Support-Telegram-a855f7?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Zcziiy)
+[![Telegram](https://img.shields.io/badge/Contact-Telegram-a855f7?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Zcziiy)
+
+<br>
+
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=15&duration=3000&pause=600&color=EC4899&center=true&vCenter=true&width=500&lines=⭐+Star+this+repo+if+the+API+helped+you!;🍴+Fork+%26+integrate+into+your+bot!;💖+Made+with+love+by+Sudeep+Boss)](https://git.io/typing-svg)
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=130&section=footer" width="100%"/>
 
 </div>
-
----
-
-<div align="center">
-
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=15&duration=3000&pause=500&color=EC4899&center=true&vCenter=true&width=500&lines=⭐+Star+the+repo+if+it+helped+you!;🍴+Fork+%26+build+something+cool!;💖+Made+with+love+by+Sudeep+Boss)](https://git.io/typing-svg)
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=120&section=footer" width="100%"/>
-
-</div>
-
